@@ -1,0 +1,15 @@
+version: '3.6'
+services:
+  application:
+    build: .
+    container_name: social_expenses
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=cesarcedanov
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+
+    ports:
+      - "5432:5432"
